@@ -1,0 +1,11 @@
+bin/adam-submit transform /user/aday/src/sequencing-utils/GATK-workflow/RG0.tagged.bam /user/syoon/workspace/RG0.tagged.adam
+
+bin/adam-submit fasta2adam /user/aday/src/sequencing-utils/hg38/chr1.fa /user/syoon/workspace/chr1.adam
+
+bin/adam-submit --executor-memory 10G fasta2adam /user/aday/src/sequencing-utils/hg38/hg38.fa /user/syoon/workspace/hg38.adam
+
+(above command failed with GC out of memory issue)
+
+bin/avocado-submit /user/syoon/workspace/RG0.tagged.adam /user/syoon/workspace/chr1.adam /user/syoon/workspace/chr1.var.adam avocado-sample-configs/basic.properties
+
+bin/adam-submit adam2vcf /user/syoon/workspace/chr1.var.adam /var/syoon/workspace/chr1.var.vcf
