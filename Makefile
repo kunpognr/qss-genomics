@@ -10,7 +10,7 @@ AVOCADO_CONF=../avocado/avocado-sample-configs/basic.properties
 	${ADAM_HOME}/bin/adam-submit fasta2adam $< $@
 
 %.bam : %.fq
-	${ADAM_HOME}/bin/adam-submit fasta2adam $< $@
+	echo TODO
 
 %.bam.adam : %.bam
 	${ADAM_HOME}/bin/adam-submit transform $< $@
